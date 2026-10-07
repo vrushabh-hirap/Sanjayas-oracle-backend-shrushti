@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: oracle-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health.php
+    envVars:
+      - key: DB_PATH
+        value: /app/data/oracle2_ctf.db
